@@ -1,0 +1,18 @@
+====================================================================
+💖 HOW TO ADD SHABINA'S PHOTOS FOR CARD 1 (TAREEF-E-SHABINA)
+====================================================================
+
+You can add her real pictures directly here in this 'images' folder:
+
+1. photo1.jpg  -> For "Aapki Nasheeli Aankhein 👀"
+2. photo2.jpg  -> For "Aapki Cute Si Naak 👃"
+3. photo3.jpg  -> For "Aapke Gulabi Hoth 💋"
+4. photo4.jpg  -> For "Aapke Reshmi Baal 💇‍♀️"
+5. photo5.jpg  -> For "Aapki Meethi Awaaz & Hasi 🗣️"
+6. photo6.jpg  -> For "Aapka Paak Dil 🤍"
+
+Simply name your photos 'photo1.jpg', 'photo2.jpg', etc., and paste them inside this folder.
+The website will immediately and automatically display them!
+
+(If any photo is not added yet, the website automatically shows a beautiful romantic aesthetic fallback so it never looks empty!)
+====================================================================

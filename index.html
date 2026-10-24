@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- iPhone 11 Optimized Viewport & Safe Areas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday Shabina (Meri Jaana) 💖 | Exclusive Surprise</title>
+  
+  <!-- Premium Romantic Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Quicksand:wght@400;500;600;700&family=Caveat:wght@600;700&family=Marck+Script&display=swap" rel="stylesheet">
+  
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dynamic Sakura & Bokeh Particles Canvas -->
+  <canvas id="particleCanvas" class="particles-bg"></canvas>
+
+  <!-- Sparkle Magic Cursor Canvas -->
+  <canvas id="cursorTrailCanvas" class="cursor-canvas"></canvas>
+
+  <!-- ================================================================= -->
+  <!-- FLOATING VINTAGE VINYL TURNTABLE PLAYER                           -->
+  <!-- ================================================================= -->
+  <div class="vinyl-player-widget" id="vinylPlayer" title="Click to play romantic birthday music">
+    <div class="vinyl-turntable" id="vinylTurntable" onclick="toggleMusic()">
+      <div class="turntable-base">
+        <div class="vinyl-record" id="vinylRecord">
+          <div class="vinyl-grooves"></div>
+          <div class="vinyl-label">
+            <span class="label-heart">💖</span>
+            <span class="label-title">SHABINA</span>
+          </div>
+        </div>
+        <div class="vinyl-tonearm" id="vinylTonearm">
+          <div class="tonearm-head"></div>
+        </div>
+      </div>
+      <div class="vinyl-info-pill">
+        <span class="music-note-float" id="musicNote">🎵</span>
+        <span class="vinyl-text" id="vinylStatusText">Play Song</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 1. ENTRY POP-UP GATE (IPHONE 11 STREAMLINED & SHAYARI)            -->
+  <!-- ================================================================= -->
+  <section id="gateScreen" class="gate-overlay">
+    
+    <div class="gate-glow-orb gate-glow-1"></div>
+    <div class="gate-glow-orb gate-glow-2"></div>
+
+    <!-- The 3D Birthday Parcel Pop-Up Card -->
+    <div id="gateModal" class="gate-modal holographic-card">
+      
+      <div class="modal-gift-ribbon">
+        <div class="ribbon-sparkle-stars">✨ 💖 ✨</div>
+        <div class="ribbon-badge">DEDICATED TO SHABINA</div>
+      </div>
+
+      <div class="modal-body">
+        
+        <div class="cute-bear-avatar-preview">
+          <div class="gif-frame-glow">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHIzbWdxZ2VqMDJ4bzVlZHRlcWJ2OGJyd3Y1NHFiaXZobDVic25yZSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/MDJ9IbxxvDUQM/giphy.gif" alt="Cute sticker" class="cute-sticker-gif" onerror="this.src='https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=200'">
+          </div>
+        </div>
+
+        <h1 class="modal-title" id="gateTitle">Happy Birthday Shabina! 🎂✨</h1>
+        
+        <!-- Opening Romantic Urdu/Birthday Shayari for Shabina -->
+        <div class="gate-shayari-card" id="gateShayariCard">
+          <p class="gate-shayari-text" id="gateShayariText">
+            "Chehre pe noor aur aankhon mein pyaar hai,<br>
+            Aapki ek hasi pe yeh dil sau baar nisaar hai.<br>
+            Aaya hai aapka birthday banke ek jashn-e-bahaar,<br>
+            Meri pyari Shabina, aapko Salgirah Mubarak hazaar baar!" 🌸✨
+          </p>
+        </div>
+
+        <p class="modal-subtitle" id="gateSubtitle">
+          Aapke liye ek be-inteha khoobsurat surprise... Apna birthday date enter kijiye to unlock! 🎁
+        </p>
+
+        <!-- Form for password entry -->
+        <form id="gateForm" class="password-form" onsubmit="return false;">
+          <div class="input-wrapper-lux">
+            <span class="input-prefix-icon">🔐</span>
+            <input 
+              type="password" 
+              id="gatePasswordInput" 
+              class="candy-input-lux" 
+              placeholder="Enter your birthdate (DDMMYYYY)..." 
+              autocomplete="off"
+              required
+            />
+            <button type="button" id="togglePasswordVisibilityBtn" class="visibility-btn" title="Show/Hide Password">👁️</button>
+          </div>
+
+          <!-- Unlock Button -->
+          <button type="submit" id="gateSubmitBtn" class="candy-btn-lux pulse-glow">
+            <span class="btn-shine"></span>
+            <span class="btn-txt">Open My Gifts, Meri Jaana</span>
+            <span class="btn-heart-icon">💖</span>
+          </button>
+        </form>
+
+        <div id="gateErrorMsg" class="error-msg" aria-live="polite"></div>
+
+        <!-- Hint Section -->
+        <div class="hint-accordion">
+          <button type="button" id="hintToggleBtn" class="hint-toggle-link">
+            <span>💡 Need a hint?</span>
+            <span id="hintArrow" class="hint-arrow">▼</span>
+          </button>
+          <div id="hintContent" class="hint-content">
+            <p id="gateHintText">Aapka sabse khaas din (Aapki date of birth: DDMMYYYY) 🎂❤️</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================= -->
+  <!-- CORNER PARTY POPPER CANNONS                                       -->
+  <!-- ================================================================= -->
+  <div id="popperLeft" class="corner-popper popper-bottom-left" aria-hidden="true">
+    <div class="popper-cannon">🎉</div>
+  </div>
+  <div id="popperRight" class="corner-popper popper-bottom-right" aria-hidden="true">
+    <div class="popper-cannon">🎉</div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 2. MAIN WEBSITE APP (REVEALED AFTER UNLOCKING)                   -->
+  <!-- ================================================================= -->
+  <main id="mainApp" class="main-content hidden-app">
+    
+    <!-- Hero / Header Section -->
+    <header class="hero-section">
+      <div class="hero-love-capsule">
+        <span class="capsule-icon">👑</span>
+        <span>Aap Meri Zindagi Ka Sabse Haseen Tohfa Hain</span>
+        <span class="capsule-icon">💖</span>
+      </div>
+
+      <h1 class="hero-title" id="heroTitle">
+        Happy Birthday, <span class="highlight-name glow-name" id="displayGirlfriendName">Shabina</span>! 🌸👑
+      </h1>
+      <p class="hero-petname-subtitle">Meri Jaana, Mera Sukoon, Meri Zindagi 💕</p>
+      
+      <p class="hero-typewriter-quote" id="typewriterQuote">
+        "Aapki ek muskaan mere poore din ko roshan kar deti hai, Shabina."
+      </p>
+
+      <div class="hero-action-buttons-row">
+        <!-- Miss You Heart Shower Button -->
+        <button class="miss-you-heart-btn" onclick="sendMissYouHearts()">
+          <span>Tap Here Whenever You Miss Me 🥺❤️</span>
+        </button>
+      </div>
+
+      <div class="hero-instruction-card">
+        <span class="sparkle-icon">✨</span>
+        <span>Aapke liye niche 4 mystery cards locked hain. Secret code daliye aur apna gift open kijiye! 🎁</span>
+        <span class="sparkle-icon">✨</span>
+      </div>
+    </header>
+
+    <!-- =============================================================== -->
+    <!-- ROMANTIC LOVE HIGHLIGHTS                                        -->
+    <!-- =============================================================== -->
+    <section class="love-highlights-section">
+      <div class="section-title-badge">Meri Shabina Ke Liye</div>
+      <h3 class="section-subtitle-ldr">Kyun Aap Mere Liye Sabse Khaas Hain 🌹</h3>
+      <div class="highlights-grid" id="highlightsGridContainer">
+        <!-- Rendered dynamically from config.js -->
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- THE 4 MYSTERY CARDS SECTION (NO SPOILER PREVIEWS)               -->
+    <!-- =============================================================== -->
+    <section class="cards-section">
+      <div class="section-title-badge">Aapke 4 Khaas Surprises</div>
+      <h2 class="cards-heading">4 Gifts For Meri Jaana 🎁</h2>
+
+      <div class="cards-grid" id="cardsGrid">
+        
+        <!-- Card 1: Tareef-E-Shabina (NO SPOILER DETAILS) -->
+        <article class="mystery-card tilt-card locked" id="cardElement-1" data-card-id="1">
+          <div class="card-shimmer"></div>
+          <div class="card-ribbon">GIFT #1</div>
+          <div class="card-lock-badge" id="lockBadge-1">🔒 Locked</div>
+          <div class="card-icon-container">
+            <span class="card-icon">✨</span>
+          </div>
+          <h3 class="card-title">Tareef-E-Shabina</h3>
+          <p class="card-desc">A special surprise dedicated to Shabina... Unlock with password to see what's inside. 💖</p>
+          <button class="card-action-btn" onclick="openCardAction(1)">
+            <span class="btn-text">Unlock Surprise</span>
+            <span class="btn-icon">🗝️</span>
+          </button>
+        </article>
+
+        <!-- Card 2: Love Letter to Meri Jaana (NO SPOILER DETAILS) -->
+        <article class="mystery-card tilt-card locked" id="cardElement-2" data-card-id="2">
+          <div class="card-shimmer"></div>
+          <div class="card-ribbon">GIFT #2</div>
+          <div class="card-lock-badge" id="lockBadge-2">🔒 Locked</div>
+          <div class="card-icon-container">
+            <span class="card-icon">💌</span>
+          </div>
+          <h3 class="card-title">Letter to Meri Jaana</h3>
+          <p class="card-desc">Straight from my heart to yours... Enter the secret password to open. 💕</p>
+          <button class="card-action-btn" onclick="openCardAction(2)">
+            <span class="btn-text">Unlock Letter</span>
+            <span class="btn-icon">🗝️</span>
+          </button>
+        </article>
+
+        <!-- Card 3: 7 Wada-E-Wafa & VIP Love Coupons -->
+        <article class="mystery-card tilt-card locked" id="cardElement-3" data-card-id="3">
+          <div class="card-shimmer"></div>
+          <div class="card-ribbon">GIFT #3</div>
+          <div class="card-lock-badge" id="lockBadge-3">🔒 Locked</div>
+          <div class="card-icon-container">
+            <span class="card-icon">💍</span>
+          </div>
+          <h3 class="card-title">7 Wada-E-Wafa & Coupons</h3>
+          <p class="card-desc">A special set of promises and exclusive lifetime tokens... Unlock to open. ✨</p>
+          <button class="card-action-btn" onclick="openCardAction(3)">
+            <span class="btn-text">Unlock Promises</span>
+            <span class="btn-icon">🗝️</span>
+          </button>
+        </article>
+
+        <!-- Card 4: Birthday Cake & Celebration (NO SPOILER DETAILS) -->
+        <article class="mystery-card tilt-card locked" id="cardElement-4" data-card-id="4">
+          <div class="card-shimmer"></div>
+          <div class="card-ribbon">GIFT #4</div>
+          <div class="card-lock-badge" id="lockBadge-4">🔒 Locked</div>
+          <div class="card-icon-container">
+            <span class="card-icon">🎂</span>
+          </div>
+          <h3 class="card-title">Birthday Cake & Celebration</h3>
+          <p class="card-desc">Close your eyes, make a sweet wish, and blow out the candles! 🎉</p>
+          <button class="card-action-btn" onclick="openCardAction(4)">
+            <span class="btn-text">Unlock Cake Finale</span>
+            <span class="btn-icon">🗝️</span>
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-heart-symbol">💖</div>
+      <p>Handcrafted with endless love for my Jaana, Shabina.</p>
+      <p class="footer-small">Salgirah Mubarak, Meri Jaana 💕</p>
+    </footer>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- 3. MODAL: CARD PASSWORD PROMPT DIALOG                             -->
+  <!-- ================================================================= -->
+  <div id="cardPasswordModal" class="popup-modal-backdrop" aria-hidden="true">
+    <div class="card-pass-box holographic-box">
+      <button class="modal-close-icon" onclick="closeCardPasswordModal()">✕</button>
+      <div class="pass-box-header">
+        <span class="pass-box-icon" id="cardPassIcon">🔐</span>
+        <h3 id="cardPassTitle">Unlock Surprise</h3>
+        <p id="cardPassSubtitle">Enter the secret key for this card</p>
+      </div>
+
+      <form id="cardPassForm" onsubmit="return false;">
+        <div class="input-wrapper-lux">
+          <input 
+            type="password" 
+            id="cardPassInput" 
+            class="candy-input-lux text-center" 
+            placeholder="Enter card password..." 
+            autocomplete="off"
+          />
+        </div>
+        <div id="cardPassError" class="error-msg"></div>
+
+        <div class="card-hint-box" id="cardHintBox">
+          <span class="hint-label">💡 Secret Clue:</span>
+          <span id="cardHintText">Hint text goes here</span>
+        </div>
+
+        <div class="modal-actions-row">
+          <button type="button" class="candy-btn-secondary" onclick="closeCardPasswordModal()">Close</button>
+          <button type="submit" id="cardPassSubmitBtn" class="candy-btn-lux">
+            <span class="btn-txt">Unlock Card</span>
+            <span>✨</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- 4. CONTENT MODALS (SHOWCASING THE 4 SURPRISES)                    -->
+  <!-- ================================================================= -->
+
+  <!-- MODAL 1: TAREEF-E-SHABINA (FEATURE ADMIRATION WITH PICTURE SUPPORT) -->
+  <div id="modalCard-1" class="popup-modal-backdrop content-modal" aria-hidden="true">
+    <div class="content-modal-box tareef-modal-box">
+      <button class="modal-close-icon" onclick="closeContentModal(1)">✕</button>
+      <header class="content-header">
+        <span class="header-pill">✨ Gift #1 Unlocked</span>
+        <h2>Tareef-E-Shabina 🌸</h2>
+        <p>Aapki be-panah khoobsurati aur har ek ada ke naam...</p>
+      </header>
+
+      <div class="tareef-cards-grid" id="tareefGridContainer">
+        <!-- Rendered dynamically from config.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: 3D WAX-SEALED EMOTIONAL & FUNNY LOVE LETTER WITH SHAYARIS -->
+  <div id="modalCard-2" class="popup-modal-backdrop content-modal" aria-hidden="true">
+    <div class="content-modal-box letter-modal-box">
+      <button class="modal-close-icon" onclick="closeContentModal(2)">✕</button>
+      
+      <header class="content-header">
+        <span class="header-pill">💌 Gift #2 Unlocked</span>
+        <h2>Letter to Meri Jaana</h2>
+      </header>
+
+      <div id="envelopeWrapper" class="envelope-wrapper">
+        <div class="envelope-3d" id="envelopeFront" onclick="openLoveLetterEnvelope()">
+          <div class="envelope-flap" id="envelopeFlap"></div>
+          <div class="wax-seal" id="waxSeal">
+            <span class="wax-heart">❤️</span>
+          </div>
+          <p class="envelope-hint">Wax seal pe tap kijiye aur apna letter open kijiye, Jaana 💌</p>
+        </div>
+
+        <div class="letter-paper" id="letterPaper">
+          <div class="letter-vintage-stamp">SEALED WITH ENDLESS LOVE ❤️</div>
+          <div class="letter-date" id="letterDate">Aapke Birthday Par</div>
+          <div class="letter-salutation" id="letterSalutation">Meri Sabse Pyaari Shabina (Meri Jaana),</div>
+          
+          <div class="letter-shayari-highlight" id="letterStartShayari"></div>
+
+          <div class="letter-body" id="letterBody"></div>
+
+          <div class="letter-shayari-highlight" id="letterMiddleShayari"></div>
+
+          <div class="letter-body" id="letterMiddleBody"></div>
+
+          <div class="letter-signature" id="letterSignature">
+            Hamesha sirf aur sirf aapka,<br>Aapka Deewaana, Aapka Humsafar ❤️<br>(Hamesha Aapke Dil Mein Basa Hua)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: 7 WADA-E-WAFA & VIP LOVE COUPONS FOR SHABINA -->
+  <div id="modalCard-3" class="popup-modal-backdrop content-modal" aria-hidden="true">
+    <div class="content-modal-box promises-modal-box">
+      <button class="modal-close-icon" onclick="closeContentModal(3)">✕</button>
+      <header class="content-header">
+        <span class="header-pill">💍 Gift #3 Unlocked</span>
+        <h2 class="promises-main-title">7 Wada-E-Wafa & Love Coupons 💖</h2>
+        <p>Shabina, mere dil ke 7 pakke wade aur aapke exclusive VIP love coupons...</p>
+      </header>
+
+      <div class="promises-container" id="promisesCardContainer">
+        <!-- Rendered dynamically from config.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: 3D CAKE, LANTERNS & LOUD HAPPY BIRTHDAY CELEBRATION -->
+  <div id="modalCard-4" class="popup-modal-backdrop content-modal" aria-hidden="true">
+    <div class="content-modal-box cake-modal-box" id="cakeModalContainer">
+      <button class="modal-close-icon" onclick="closeContentModal(4)">✕</button>
+      <header class="content-header">
+        <span class="header-pill">🎂 Grand Finale Unlocked</span>
+        <h2>Make A Wish, Shabina!</h2>
+        <p id="cakePromptText">Aankhein band kijiye, dil se ek khoobsurat dua maangiye, aur candles blow kijiye! 🕯️</p>
+      </header>
+
+      <!-- Center Grand Pop Animation Overlay for "Happy Birthday Meri Jaana" -->
+      <div id="centerBirthdayPop" class="center-birthday-pop-overlay" aria-hidden="true">
+        <div class="center-heart-burst-content">
+          <div class="burst-hearts-cluster">💖 ✨ 👑 ✨ 💖</div>
+          <h1 class="center-burst-title">HAPPY BIRTHDAY<br><span class="burst-glow-name">MERI JAANA</span>!</h1>
+          <p class="center-burst-subtitle">Shabina, Aap Meri Zindagi Ki Roshni Hain! 🎂👑✨</p>
+        </div>
+      </div>
+
+      <!-- Night Sky Lanterns Layer -->
+      <div id="skyLanternsContainer" class="sky-lanterns-container" aria-hidden="true"></div>
+
+      <!-- Interactive 3D Birthday Cake Graphic -->
+      <div class="cake-stage" id="cakeStage" onclick="blowOutCandles()">
+        
+        <div class="candles-row" id="candlesRow">
+          <div class="candle">
+            <div class="flame flame-glow" id="flame-1"></div>
+            <div class="wick"></div>
+            <div class="candle-stick candle-pink"></div>
+          </div>
+          <div class="candle center-candle">
+            <div class="flame flame-glow" id="flame-2"></div>
+            <div class="wick"></div>
+            <div class="candle-stick candle-gold"></div>
+          </div>
+          <div class="candle">
+            <div class="flame flame-glow" id="flame-3"></div>
+            <div class="wick"></div>
+            <div class="candle-stick candle-lavender"></div>
+          </div>
+        </div>
+
+        <div class="cake-tier tier-top">
+          <div class="cake-frosting frosting-top"></div>
+          <div class="strawberries">🍓 🍓 🍓</div>
+        </div>
+        <div class="cake-tier tier-mid">
+          <div class="cake-frosting frosting-mid"></div>
+          <div class="sprinkles">✨ 🌸 💕 🌸 ✨</div>
+        </div>
+        <div class="cake-tier tier-base">
+          <div class="cake-frosting frosting-base"></div>
+          <div class="cake-plate"></div>
+        </div>
+
+      </div>
+
+      <div class="cake-action-guide" id="cakeActionGuide">
+        <button class="candy-btn-lux pulse-glow" onclick="blowOutCandles()">
+          <span class="btn-shine"></span>
+          <span class="btn-txt">Blow Out Candles 💨🕯️</span>
+        </button>
+      </div>
+
+      <div class="cake-slice-guide" id="cakeSliceGuide" style="display:none;">
+        <button class="candy-btn-lux pulse-glow" onclick="cutCakeSlice()">
+          <span class="btn-shine"></span>
+          <span class="btn-txt">Cut A Slice For Shabina 🍰🔪</span>
+        </button>
+      </div>
+
+      <div id="cakeSliceDelivered" class="cake-slice-delivered-box" style="display:none;">
+        <div class="delivered-slice-icon">🍰 💖 👑</div>
+        <h4>Pehla Slice Meri Jaana Ke Liye!</h4>
+        <p>Yeh cake aapki tarah hi be-panah meetha hai, Shabina. Hamesha aise hi muskurati rahiye! 💕</p>
+      </div>
+
+      <div id="wishCelebrationBanner" class="wish-banner hidden">
+        <div class="wish-stars">✨ 🌟 ✨</div>
+        <h3>🎉 HAPPY BIRTHDAY MERI JAANA! 💖👑</h3>
+        <p id="wishGrantedMessage">Aapki har dua qubool ho, Shabina! Hamesha muskurati rahiye! 🎂✨</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
